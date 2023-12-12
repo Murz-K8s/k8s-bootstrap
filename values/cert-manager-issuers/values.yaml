@@ -1,0 +1,7 @@
+letsEncrypt:
+  enabled: {{ (readFile "settings.yaml" | fromYaml).certManager.letsEncrypt.enabled }}
+  email: {{ (readFile "settings.yaml" | fromYaml).contactEmail }}
+  useStaging: {{ (readFile "settings.yaml" | fromYaml).certManager.letsEncrypt.useStaging }}
+
+selfSigned:
+  enabled: {{ (readFile "settings.yaml" | fromYaml).certManager.selfSigned.enabled }}

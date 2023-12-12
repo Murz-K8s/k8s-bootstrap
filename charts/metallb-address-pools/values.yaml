@@ -1,0 +1,7 @@
+# Fill the IP adresses of your nodes, but not in this file, but in the general
+# `settings.yaml` file in the root of this repo.
+# Example:
+# addresses:
+#   - 1.2.3.4/32
+#   - 1.2.3.5/32
+

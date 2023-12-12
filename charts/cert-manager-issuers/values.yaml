@@ -1,0 +1,7 @@
+letsencrypt:
+  enabled: false
+  email: foo@example.com
+  useStaging: true
+
+selfSigned:
+  enabled: true

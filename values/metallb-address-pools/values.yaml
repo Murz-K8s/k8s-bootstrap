@@ -1,0 +1,2 @@
+addresses:
+ {{ (readFile "settings.yaml" | fromYaml).loadBalancerIps | toYaml | nindent 2 }}

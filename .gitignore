@@ -1,0 +1,5 @@
+/.helmwave
+/charts/*/Chart.lock
+/charts/*/charts/*.tgz
+./cluster-access.yaml
+settings.yaml

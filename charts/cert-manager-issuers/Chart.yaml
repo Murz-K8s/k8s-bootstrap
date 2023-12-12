@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cert-manager-issuers
+description: Collections of issuers for the cert-manager.
+version: 1.0.0
+appVersion: '1.0.0'
+
+maintainers:
+  - name: Alexey Murz Korepov
+    email: MurzNN@gmail.com

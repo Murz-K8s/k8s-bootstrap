@@ -1,0 +1,28 @@
+# Copy this file to the settings.yaml and fill the settings, related to your
+# current cluster.
+
+# Used to configure Let's encrypt account.
+contactEmail: foo@example.com
+
+# Enter here the list of your public IPs that will be used to manage
+# Ingress HTTP requests and other services with the type "LoadBalancer".
+# Used for now to configure MetalLB only, but can be reused for other things.
+loadBalancerIps:
+  - 1.2.3.4/32
+  - 1.2.3.5/32
+
+# Used to configure LoadBalancer to share the same IP for different services.
+# Put here any
+sharedName: myCluster
+
+# Settings related to the certificate manager configuration.
+certManager:
+  letsEncrypt:
+    # Set to false, if you don't need to deploy Let's Encrypt issuer.
+    enabled: true
+    # Comment the `useStaging` when you finish testing the staging version of
+    # the Let's Encrypt API and ready to swich to production.
+    useStaging: true
+  selfSigned:
+    # Set to true, if you want to use a self-signed issuer.
+    enabled: false

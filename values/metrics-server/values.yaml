@@ -1,0 +1,4 @@
+# Need to manually set 'kubelet-insecure-tls'
+# https://github.com/orgs/helmwave/discussions/789
+args:
+  - --kubelet-insecure-tls

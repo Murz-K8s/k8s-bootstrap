@@ -1,0 +1,79 @@
+project: k8s-bootstrap
+version: '0.1.0'
+
+# OCI: modern way to get chart from registry
+registries:
+  - host: registry-1.docker.io
+
+repositories:
+  # For local-path-provisioner.
+  - name: containeroo
+    url: https://charts.containeroo.ch
+  - name: metallb
+    url: https://metallb.github.io/metallb
+  - name: metrics-server
+    url: https://kubernetes-sigs.github.io/metrics-server/
+  - name: ingress-nginx
+    url: https://kubernetes.github.io/ingress-nginx
+  # For cert-manager.
+  - name: jetstack
+    url: https://charts.jetstack.io
+
+releases:
+  - name: local-path-provisioner
+    namespace: local-path-provisioner
+    create_namespace: true
+    chart: containeroo/local-path-provisioner
+    version: 0.0.22
+    values:
+      - values/local-path-provisioner/values.yaml
+
+  - name: metallb
+    namespace: metallb-system
+    create_namespace: true
+    chart: metallb/metallb
+    version: 0.13.12
+    values:
+      - values/metallb/values.yaml
+
+  - name: metallb-address-pools
+    namespace: metallb-system
+    create_namespace: true
+    chart: ./charts/metallb-address-pools
+    # store:
+    #   - ./custom-settings.yaml
+    version: 1.0.0
+    values:
+      - values/metallb-address-pools/values.yaml
+
+  - name: metrics-server
+    namespace: metrics-server
+    create_namespace: true
+    chart: metrics-server/metrics-server
+    version: 3.11.0
+    values:
+      - values/metrics-server/values.yaml
+
+  - name: ingress-nginx
+    namespace: ingress-nginx
+    create_namespace: true
+    chart: ingress-nginx/ingress-nginx
+    version: 4.8.3
+    values:
+      - values/ingress-nginx/values.yaml
+
+  - name: cert-manager
+    namespace: cert-manager
+    create_namespace: true
+    chart: jetstack/cert-manager
+    version: v1.13.2
+    values:
+      - values/cert-manager/values.yaml
+
+  - name: cert-manager-issuers
+    namespace: cert-manager
+    create_namespace: true
+    chart: ./charts/cert-manager-issuers
+    version: 1.0.0
+    values:
+      - values/values.yaml

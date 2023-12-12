@@ -1,0 +1,9 @@
+apiVersion: v2
+name: metallb-address-pools
+description: A helper for metallb chart to deploy list of address pools.
+version: 1.0.0
+appVersion: '1.0.0'
+
+maintainers:
+  - name: Alexey Murz Korepov
+    email: MurzNN@gmail.com

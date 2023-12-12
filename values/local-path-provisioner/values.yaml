@@ -1,0 +1,6 @@
+sharedFileSystemPath: /opt/local-path-provisioner
+
+nodePathMap: []
+
+storageClass:
+  defaultClass: true

@@ -1,0 +1,2 @@
+alertmanagerConfiguration:
+  name: global-alertmanager-Configuration
