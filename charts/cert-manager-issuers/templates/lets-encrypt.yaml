@@ -1,12 +1,12 @@
-{{- if .Values.letsencrypt.enabled }}
+{{- if .Values.letsEncrypt.enabled }}
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt
 spec:
   acme:
-    email: {{ .Values.letsencrypt.email }}
-    {{- if .Values.letsencrypt.useStaging }}
+    email: {{ .Values.letsEncrypt.email }}
+    {{- if .Values.letsEncrypt.useStaging }}
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     {{- else }}
     server: https://acme-v02.api.letsencrypt.org/directory
