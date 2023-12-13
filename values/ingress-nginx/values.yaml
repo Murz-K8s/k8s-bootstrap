@@ -1,4 +1,6 @@
 controller:
+  ingressClassResource:
+    default: true
   service:
     annotations:
       metallb.universe.tf/allow-shared-ip:  {{ (readFile "settings.yaml" | fromYaml).sharedName }}
